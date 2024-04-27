@@ -17,7 +17,7 @@ const Heading = () => {
             <div className="w-12 -mr-2">
               <img src={logo} alt=""/>
             </div>
-          <h1 id="codeluxe-heading" className=" text-darkprimary dark:text-white">adsko™</h1>
+          <h1 id="codeluxe-heading" className=" text-darkprimary dark:text-white">adsko</h1><p>™</p>
           </div>
           <div className="flex w-fit justify-center absolute justify-self-center gap-2" style={{width:"50%"}}>
             <HeadingIcon icon={<FaHome style={{width:"50%", height:"50%", color:"white"}} />} text="Home" link="/" ></HeadingIcon>
