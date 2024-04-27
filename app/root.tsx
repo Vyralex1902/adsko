@@ -28,7 +28,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-      <script src="../path/to/flowbite/dist/flowbite.bundle.js"></script>
         <Heading />
         {children}
         {/* <Footer></Footer> DON'T NEED IT RN */}

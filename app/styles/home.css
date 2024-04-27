@@ -205,16 +205,15 @@
   margin: 0rem;
 }
 
-.second-card {
+#second-card {
   width: 1000px;
   position: relative;
-  background-color: rgb(20, 20, 20);
   border: 1px solid rgb(255 255 255 / 5%);
   border-radius: 1.5rem;
   padding: 1rem;
 }
 
-.second-card:after {  
+#second-card:after {  
   content: "";
   height: 70px;
   width: 1px;  
@@ -232,12 +231,12 @@
   opacity: 0;
 }
 
-.second-card:after {  
+#second-card:after {  
   top: 65%;
   opacity: 0;
 }
 
-.second-card:hover:after {
+#second-card:hover:after {
   top: 25%;
   opacity: 1;
 }
@@ -249,7 +248,7 @@
   align-items: center;
   gap: 1rem;
   background-image: radial-gradient(
-    rgba(255, 255, 255, 0.1) 1px, 
+    var(--clr-for-dots) 1px, 
     transparent 1px
   );
   background-position: 50% 50%;
