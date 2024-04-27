@@ -2,6 +2,8 @@ import { FaHome } from "react-icons/fa";
 import { LuPackageOpen  } from "react-icons/lu";
 import { FaPerson   } from "react-icons/fa6";
 import { IoMoonSharp } from "react-icons/io5";
+import { PiBracketsCurly } from "react-icons/pi";
+
 import logo from "./assets/adskologo.png"
 
 import { useEffect } from "react";
@@ -15,12 +17,13 @@ const Heading = () => {
             <div className="w-12 -mr-2">
               <img src={logo} alt=""/>
             </div>
-          <h1 id="codeluxe-heading" className=" text-darkprimary dark:text-white">adsko</h1>
+          <h1 id="codeluxe-heading" className=" text-darkprimary dark:text-white">adsko™</h1>
           </div>
           <div className="flex w-fit justify-center absolute justify-self-center gap-2" style={{width:"50%"}}>
             <HeadingIcon icon={<FaHome style={{width:"50%", height:"50%", color:"white"}} />} text="Home" link="/" ></HeadingIcon>
             <HeadingIcon icon={<LuPackageOpen style={{width:"50%", height:"50%",color:"white"}} />} text="Products" link="/products" ></HeadingIcon>
-            <HeadingIcon icon={<FaPerson style={{width:"50%", height:"50%",color:"white"}} />} text="Who" link="/about" ></HeadingIcon>
+            <HeadingIcon icon={<PiBracketsCurly style={{width:"50%", height:"50%",color:"white"}} />} text="Source Codes" link="/source-codes" ></HeadingIcon>
+            <HeadingIcon icon={<FaPerson style={{width:"50%", height:"50%",color:"white"}} />} text="About Us" link="/about" ></HeadingIcon>
           </div>
           <div id="themeToggle" className="border-2 border-white border-opacity-20 w-12 h-12 rounded-3xl bg-black bg-opacity-35 hover:bg-opacity-50
           dark:bg-white dark:bg-opacity-20 justify-center align-middle flex items-center absolute right-0 mr-5">

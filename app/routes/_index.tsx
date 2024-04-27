@@ -116,8 +116,8 @@ export default function Index() {
               <li className="static left-0 text-left ml-4">
                   <a aria-label="Surface Laptop Studio 2 Le novità" href="https://">mail@maildom.com</a>
               </li>
-              <li className="static text-left left-0 ml-4">
-                  <a aria-label="Surface Laptop Go 3 Le novità" href="https://">Surface Laptop Go 3</a>
+              <li className="static text-center">
+                  <a aria-label="Surface Laptop Go 3 Le novità" href="https://">© ADSKO™ 2024</a>
               </li>
             </ul>
           </div>

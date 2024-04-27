@@ -1,0 +1,81 @@
+h1{
+  font-family: "Montserrat", sans-serif;
+}
+
+h2{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+/* SHARD CARD */
+
+#second-card-body {
+  height: 500px;
+  display: grid;
+  place-items: center;
+  margin: 0rem;
+  margin-bottom: 20px;
+  overflow: hidden;  
+  font-family: "Montserrat", sans-serif;
+}
+
+#second-card-body h2, p {
+  margin: 0rem;
+}
+
+#second-card {
+  width: 1000px;
+  position: relative;
+  border: 1px solid rgb(255 255 255 / 5%);
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+#second-card:after {  
+  content: "";
+  height: 70px;
+  width: 1px;  
+  position: absolute;  
+  left: -1px;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(
+    transparent,
+    mediumslateblue,
+    transparent
+  );
+  opacity: 0;
+}
+
+#second-card:after {  
+  top: 65%;
+  opacity: 0;
+}
+
+#second-card:hover:after {
+  top: 25%;
+  opacity: 1;
+}
+
+.second-card-content {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-image: radial-gradient(
+    var(--clr-for-dots) 1px, 
+    transparent 1px
+  );
+  background-position: 50% 50%;
+  background-size: 1.3rem 1.4rem;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.second-card-content > :is(h2, p) {
+  text-align: center;
+}

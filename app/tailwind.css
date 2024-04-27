@@ -44,4 +44,15 @@
    transition-all
    ;
   }
+
+  .darkmode-text-h2{
+    @apply text-gray-800 dark:text-gray-300;
+  }
+  .darkmode-text-p{
+    @apply text-gray-900 dark:text-gray-200;
+  }
+
+  .darkmode-bg{
+    @apply bg-white dark:bg-[#141414];
+  }
 }
