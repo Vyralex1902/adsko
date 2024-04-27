@@ -1,0 +1,47 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+  .heading-icon{
+    @apply 
+    relative
+    flex 
+    items-center 
+    justify-center 
+    h-12 
+    w-12 
+    my-auto
+   hover:bg-green-400 
+   bg-green-600
+   rounded-3xl
+   hover:rounded-xl
+   transition-all
+   ;
+  }
+
+  .heading-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max top-12 rounded-md shadow-md text-white font-bold
+    transition-all duration-100 scale-0 origin-top text-xs z-50;
+  }
+
+  .footer-icon{
+    @apply 
+    relative
+    flex 
+    items-center 
+    justify-center 
+    h-6
+    w-6
+    ml-1
+    mr-1
+    p-0.5
+    my-auto
+   hover:bg-green-500 
+   bg-green-700
+   rounded-3xl
+   hover:rounded-xl
+   transition-all
+   ;
+  }
+}

@@ -1,0 +1,422 @@
+/* HORIZONTAL IMAGES */
+
+#CodingLangsDisplay_ul {
+  text-align: center;
+  padding: 0;
+}
+
+#CodingLangsDisplay_ul li {
+  width: 5%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#CodingLangsDisplay_ul li img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* GET STARTED BTN */
+
+.getStartedbtn_div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.getStartedbtn_div button {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(92,92,255);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 0;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.getStartedbtn_div button:before, .getStartedbtn_div button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #44d8a4;
+  transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.getStartedbtn_div button:before {
+  right: 0;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.getStartedbtn_div button:after {
+  left: 0;
+  bottom: 0;
+}
+
+.getStartedbtn_div button span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.getStartedbtn_div button span:before, .getStartedbtn_div button span:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background-color: #44d8a4;
+  transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.getStartedbtn_div button span:before {
+  right: 0;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.getStartedbtn_div button span:after {
+  left: 0;
+  bottom: 0;
+}
+
+.getStartedbtn_div button p {
+  padding: 0;
+  margin: 0;
+  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.getStartedbtn_div button p:before, .getStartedbtn_div button p:after {
+  position: absolute;
+  width: 100%;
+  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+  z-index: 1;
+  left: 0;
+}
+
+.getStartedbtn_div button p:before {
+  content: attr(data-title);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.getStartedbtn_div button p:after {
+  content: attr(data-text);
+  top: 150%;
+}
+
+.getStartedbtn_div button:hover:before, .getStartedbtn_div button:hover:after {
+  width: 100%;
+}
+
+.getStartedbtn_div button:hover span {
+  z-index: 1;
+}
+
+.getStartedbtn_div button:hover span:before, .getStartedbtn_div button:hover span:after {
+  height: 100%;
+}
+
+.getStartedbtn_div button:hover p:before {
+  top: -50%;
+  transform: rotate(5deg);
+}
+
+.getStartedbtn_div button:hover p:after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.getStartedbtn_div button.start {
+  background-color: #44d8a4;
+  box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.getStartedbtn_div button.start p:before {
+  top: -50%;
+  transform: rotate(5deg);
+}
+
+.getStartedbtn_div button.start p:after {
+  color: white;
+  transition: all 0s ease;
+  content: attr(data-start);
+  top: 50%;
+  transform: translateY(-50%);
+  animation: start 0.3s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes start {
+  from {
+    top: -50%;
+  }
+}
+
+.getStartedbtn_div button.start:hover:before, .getStartedbtn_div button.start:hover:after {
+  display: none;
+}
+
+.getStartedbtn_div button.start:hover span {
+  display: none;
+}
+
+.getStartedbtn_div button:active {
+  outline: none;
+  border: none;
+}
+
+.getStartedbtn_div button:focus {
+  outline: 0;
+}
+
+/* SHARD CARD */
+
+#second-card-body {
+  height: 500px;
+  display: grid;
+  place-items: center;
+  margin: 0rem;
+  margin-bottom: 20px;
+  overflow: hidden;  
+  font-family: "Montserrat", sans-serif;
+}
+
+#second-card-body h1, h2, h3, p {
+  margin: 0rem;
+}
+
+.second-card {
+  width: 1000px;
+  position: relative;
+  background-color: rgb(20, 20, 20);
+  border: 1px solid rgb(255 255 255 / 5%);
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.second-card:after {  
+  content: "";
+  height: 70px;
+  width: 1px;  
+  position: absolute;  
+  left: -1px;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(
+    transparent,
+    mediumslateblue,
+    transparent
+  );
+  opacity: 0;
+}
+
+.second-card:after {  
+  top: 65%;
+  opacity: 0;
+}
+
+.second-card:hover:after {
+  top: 25%;
+  opacity: 1;
+}
+
+.second-card-content {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px, 
+    transparent 1px
+  );
+  background-position: 50% 50%;
+  background-size: 1.3rem 1.4rem;
+  padding: 4rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.second-card-content > :is(h1, h3, p) {
+  text-align: center;
+}
+
+.second-card-content > h1 {
+  color: rgb(250 249 246); 
+  font-size: 2.6rem;
+}
+
+.second-card-content > h3 {
+  color: mediumslateblue;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+}
+
+.second-card-content > p {
+  color: rgb(255 255 255 / 75%);
+  line-height: 1.5rem;
+}
+
+/* CARDS: */
+
+#card-body {
+  align-items: center;
+  display: flex;
+  height: 650px;
+  width: 1000px;
+  align-self: center;
+  justify-content: center;
+  margin: 0px;
+  overflow: hidden;
+  padding: 0px;
+  border-radius: 15px;
+}
+
+#card-body h1, h2, h3, h4, span {
+  color: rgb(240, 240, 240);
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  margin: 0px;
+}
+
+#card-body .i {  
+  color: rgb(240, 240, 240);
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;  
+  max-width: 916px;
+  width: calc(100% - 20px);
+}
+
+#cards:hover > .card::after {
+  opacity: 1;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: 260px;
+  flex-direction: column;
+  position: relative;
+  width: 300px;  
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::before,
+.card::after {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.card::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(60,255,206, 0.06),
+    transparent 40%
+  );
+  z-index: 3;
+}
+
+.card::after {  
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(60,255,206, 0.4),
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+.card > .card-content {
+  background-color: rgb(23, 23, 23);
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  inset: 1px;
+  padding: 10px;
+  position: absolute;
+  z-index: 2;
+}
+
+.card-image {
+  align-items: center;
+  display: flex;
+  height: 140px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-image > .i {
+  font-size: 70px;
+  opacity: 0.25;
+}
+
+.card-info-wrapper {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 0px 20px;
+}
+
+.card-info {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+}
+
+.card-info > .i {  
+  font-size: 1em;
+  height: 20px;
+  line-height: 20px;
+}
+
+.card-info-title > h3 {
+  font-size: 1.8em;
+  line-height: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.card-info-title > h4 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9em;
+  margin-top: 8px;
+  font-family: 'Nunito Sans', sans-serif;
+}
