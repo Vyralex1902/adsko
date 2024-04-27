@@ -6,5 +6,6 @@ import tsconfigPaths from "vite-tsconfig-paths";
 installGlobals();
 
 export default defineConfig({
-  plugins: [remix(), tsconfigPaths()],
+  base: '/adsko/',
+  plugins: [remix({basename:'/adsko/',}), tsconfigPaths()],
 });
