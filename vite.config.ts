@@ -7,5 +7,5 @@ installGlobals();
 
 export default defineConfig({
   base: '/adsko/',
-  plugins: [remix({basename:'/adsko/',}), tsconfigPaths()],
+  plugins: [remix({basename:'/adsko/', ssr: false, }), tsconfigPaths()],
 });
