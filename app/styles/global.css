@@ -14,6 +14,14 @@ html{
   font-weight: 400;
 }
 
+#codeluxe-max{
+  text-transform: uppercase;
+  font-family: "singolarebold";
+  font-size: 200px;
+  font-weight: 600;
+  padding: 0;
+}
+
 #codeluxe-heading{
   text-transform: uppercase;
   font-family: "singolarebold";

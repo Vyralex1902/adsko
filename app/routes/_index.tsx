@@ -109,6 +109,7 @@ export default function Index() {
          </div>
 
         <div className="flex flex-col h-auto align-middle text-center justify-center">
+          <video autoPlay muted loop><source src="https://youtu.be/Jox6R5-rIH0?list=PLdGJJ6BBahVodCt3Cet2bDmDSiRVJoE5G" type="video/mp4"></source></video>
           <ShardCard     />
           <div className="-mb-12"><h1 className="text-gray-800 dark:text-gray-400 font-bold text-lg">Our software is...</h1></div>
           <GlowCards     />
@@ -130,6 +131,9 @@ export default function Index() {
             </ul>
           </div>
         </footer>
+        <div id="bottomtextdiv">
+          <h1 id="codeluxe-max" className="text-darkprimary dark:text-white -my-20">adsko</h1>
+        </div>
     </div>
   );
 }
