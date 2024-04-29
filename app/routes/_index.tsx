@@ -1,7 +1,14 @@
 import type { MetaFunction } from "@remix-run/node";
 import Swal from 'sweetalert2'; 
 import {Reveal} from '../styles/reveal';
+import { Link } from "@remix-run/react";
 import inpageFooter from '../inpageFooter';
+import {
+  SignOutButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/remix";
 
 import '../styles/global.css';
 import '../styles/home.css';
@@ -117,6 +124,28 @@ export default function Index() {
           <div id="anim-in-left" className="mt-10 mb-2"><h1 className="text-[#ff20b8] font-bold text-lg">We primarily code using:</h1></div>
           <CodingLangsDisplay   img_csharp={img_csharp} img_css={img_css} img_html={img_html} img_net={img_net} img_react={img_react} img_remix={img_remix} img_ts={img_ts}  />
           <div className="h-[800px]"></div>
+        </div>
+
+        <div>
+        <SignedIn>
+        <p>You are signed in!</p>
+        <div>
+          <p>View your profile here 👇</p>
+          <UserButton />
+        </div>
+        <div>
+          <SignOutButton />
+        </div>
+      </SignedIn>
+      <SignedOut>
+        <p>You are signed out</p>
+        <div>
+          <Link to="/sign-in">Go to Sign in</Link>
+        </div>
+        <div>
+          <Link to="/sign-up">Go to Sign up</Link>
+        </div>
+      </SignedOut>
         </div>
 
         <footer>
