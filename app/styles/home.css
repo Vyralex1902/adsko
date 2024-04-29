@@ -1,3 +1,24 @@
+#maincontainer{
+  scroll-timeline-name: textMovingTimeline;
+}
+
+#codeluxe{
+  animation-name: moveToHeading;
+  animation-timeline: textMovingTimeline;
+}
+
+@keyframes moveToHeading{
+  from{
+    transform: translateY(0);
+    transform: translateX(0);
+  }
+  to{
+    transform: translateY(-100px);
+    transform: translateX(-300px);
+  }
+}
+
+
 /* HORIZONTAL IMAGES */
 
 #CodingLangsDisplay_ul {

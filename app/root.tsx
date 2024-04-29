@@ -19,13 +19,7 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-export const loader: LoaderFunction = args => {
-  return rootAuthLoader(args, ({ request }) => {
-    const { sessionId, userId, getToken } = request.auth;
-    // fetch data
-    return { yourData: 'here' };
-  });
-};
+export const loader: LoaderFunction = (args) => rootAuthLoader(args);
 
 
 export function Layout({ children }: { children: React.ReactNode }) {

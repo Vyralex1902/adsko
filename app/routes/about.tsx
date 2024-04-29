@@ -49,9 +49,9 @@ function ShardCard({}) {
     function FirstCard({}) {
       return (<div className="second-card-content">
               <h2 className="text-green-400 text-2xl">Who are we?</h2>
-              <p>We are a <span className="underline darkmode-text-p">very small company</span>, dedicated to enhancing the digital community's productivity and fostering healthier relationships with technology.</p>
+              <p id="texts">We are a <span className="underline darkmode-text-p">very small company</span>, dedicated to enhancing the digital community's productivity and fostering healthier relationships with technology.</p>
           <h2 className="text-green-400 text-2xl">How it began</h2>
-          <p>This all started one day when I <span className="text-gray-600 dark:text-gray-400">(Cyberspark, AKA the founder)</span> founded the company RockBear with
+          <p id="texts">This all started one day when I <span className="text-gray-600 dark:text-gray-400">(Cyberspark, AKA the founder)</span> founded the company RockBear with
             a friend. I was the only one who knew how to code, so I was the mind and the developer and he was
             the 'commercialist'. After some time and releases, I decided to found one sub-company: ANTIVE, to which I assigned
             the task of developing the website and some 3rd party tools for the company. I took the entire ownership of RockBear

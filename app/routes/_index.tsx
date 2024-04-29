@@ -98,7 +98,7 @@ export default function Index() {
 
   return (
     // <main style={{ width: "100%", height: "100%" }}>
-      <div style={{ width: "100%", height: "100%" }} className="justify-center align-middle text-center bg-white dark:bg-[#141414]">
+      <div id="maincontainer" style={{ width: "100%", height: "100%" }} className="justify-center align-middle text-center bg-white dark:bg-[#141414]">
         <div id="top-text" className="flex flex-col justify-center align-middle text-center mb-10">
           <h1 id="codeluxe" className="top-0 text-darkprimary dark:text-white pt-14 -mb-6">adsko</h1>
           <h2 id="slogan" className="text-gray-900 dark:text-gray-500 text-2xl font-sans">Small steps accumulate,&nbsp;
@@ -116,7 +116,7 @@ export default function Index() {
          </div>
 
         <div className="flex flex-col h-auto align-middle text-center justify-center">
-          <video autoPlay muted loop><source src="https://youtu.be/Jox6R5-rIH0?list=PLdGJJ6BBahVodCt3Cet2bDmDSiRVJoE5G" type="video/mp4"></source></video>
+          {/* <video autoPlay muted loop><source src="https://youtu.be/Jox6R5-rIH0?list=PLdGJJ6BBahVodCt3Cet2bDmDSiRVJoE5G" type="video/mp4"></source></video> */}
           <ShardCard     />
           <div className="-mb-12"><h1 className="text-gray-800 dark:text-gray-400 font-bold text-lg">Our software is...</h1></div>
           <GlowCards     />
