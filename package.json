@@ -11,7 +11,9 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.10.2",
     "@clerk/remix": "^4.0.2",
+    "@flaticon/flaticon-uicons": "^3.2.1",
     "@remix-run/node": "^2.9.1",
     "@remix-run/react": "^2.9.1",
     "@remix-run/serve": "^2.9.1",

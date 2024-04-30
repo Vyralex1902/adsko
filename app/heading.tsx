@@ -3,6 +3,7 @@ import { LuPackageOpen  } from "react-icons/lu";
 import { FaPerson   } from "react-icons/fa6";
 import { IoMoonSharp } from "react-icons/io5";
 import { PiBracketsCurly } from "react-icons/pi";
+import { MdOutlineWork } from "react-icons/md";
 
 import logo from "./assets/adskologo.png"
 
@@ -24,6 +25,7 @@ const Heading = () => {
             <HeadingIcon icon={<LuPackageOpen style={{width:"50%", height:"50%",color:"white"}} />} text="Products" link="/products" ></HeadingIcon>
             <HeadingIcon icon={<PiBracketsCurly style={{width:"50%", height:"50%",color:"white"}} />} text="Source Codes" link="/source-codes" ></HeadingIcon>
             <HeadingIcon icon={<FaPerson style={{width:"50%", height:"50%",color:"white"}} />} text="About Us" link="/about" ></HeadingIcon>
+            <HeadingIcon icon={<MdOutlineWork style={{width:"50%", height:"50%",color:"white"}} />} text="Work for us" link="/workforus" ></HeadingIcon>
           </div>
           <div id="themeToggle" className="border-2 border-white border-opacity-20 w-12 h-12 rounded-3xl bg-black bg-opacity-35 hover:bg-opacity-50
           dark:bg-white dark:bg-opacity-20 justify-center align-middle flex items-center absolute right-0 mr-5">

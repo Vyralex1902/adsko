@@ -126,7 +126,7 @@ export default function Index() {
           <div className="h-[800px]"></div>
         </div>
 
-        <div>
+        {/* <div>
         <SignedIn>
         <p>You are signed in!</p>
         <div>
@@ -146,7 +146,7 @@ export default function Index() {
           <Link to="/sign-up">Go to Sign up</Link>
         </div>
       </SignedOut>
-        </div>
+        </div> */}
 
         <footer>
           <div className="backdrop-blur flex bottom-0 flex-col  h-16 text-gray-600 dark:text-gray-300">
