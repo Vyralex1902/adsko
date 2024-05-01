@@ -39,7 +39,7 @@ const AboutUs = () => {
 
 function ShardCard({}) {
   return (<div id='second-card-body'>
-        <div id="second-card" className="bg-[#141414]/[.08] shadow-md dark:shadow-none dark:bg-white/[.0018]">
+        <div id="second-card" className="bg-[#1E1E1E]/[.08] shadow-md dark:shadow-none dark:bg-white/[.0018]">
            <FirstCard     />
         </div>
      </div>);

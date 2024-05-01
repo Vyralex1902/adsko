@@ -47,7 +47,7 @@ const WorkForUs = () => {
       
       <form>
         <div className="formbold-main-wrapper">
-          <div className="bg-white dark:bg-[#141414]">
+          <div className="bg-white dark:bg-[#1E1E1E]">
             <form action="https://formbold.com/s/FORM_ID" method="POST">
               <div className="formbold-input-flex">
                 <div>

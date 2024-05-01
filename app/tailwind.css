@@ -53,6 +53,6 @@
   }
 
   .darkmode-bg{
-    @apply bg-white dark:bg-[#141414];
+    @apply bg-white dark:bg-[#1E1E1E];
   }
 }
