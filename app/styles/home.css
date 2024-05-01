@@ -443,8 +443,6 @@
 
 /* CARDS 2 */
 
-/* CARDS: */
-
 #card2-body {
   align-items: center;
   display: flex;
@@ -512,20 +510,20 @@
 .card2::before {
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(60,255,206, 0.06),
-    transparent 50%
+    rgba(16, 100, 255, 0.06),
+    transparent 40%
   );
   z-index: 3;
-  transform: perspective(700px) rotateX(var(--rotate-deg-y)) rotateY(var(--rotate-deg-x));
+  /* transform: perspective(700px) rotateX(var(--rotate-deg-y)) rotateY(var(--rotate-deg-x)); */
 }
 
 .card2::after {  
   background: radial-gradient(
     600px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(60,255,206, 0.4),
-    transparent 50%
+    rgba(16, 100, 255, 0.4),
+    transparent 40%
   );
-  transform: perspective(700px) rotateX(var(--rotate-deg-y)) rotateY(var(--rotate-deg-x));
+  /* transform: perspective(700px) rotateX(var(--rotate-deg-y)) rotateY(var(--rotate-deg-x)); */
   z-index: 1;
 }
 

@@ -79,12 +79,13 @@ export default function Index() {
           const rect = card.getBoundingClientRect(),
             x = e.clientX - rect.left,
             y = e.clientY - rect.top;
-            const xPerc = x / rect.width;
-            const yPerc = y / rect.height;
-            const rx = (xPerc - 0.5) * 20;
-            const ry = (yPerc - 0.5) * 20;
-          card.setAttribute("style", "--mouse-x: " + x + "px; --mouse-y:" + y + "px;" + 
-          "--rotate-deg-x: " + rx + "deg; --rotate-deg-y:" + ry + "deg;");
+            // const xPerc = x / rect.width;
+            // const yPerc = y / rect.height;
+            // const rx = (xPerc - 0.5) * 20;
+            // const ry = (yPerc - 0.5) * 20;
+          card.setAttribute("style", "--mouse-x: " + x + "px; --mouse-y:" + y + "px;"  
+          // + "--rotate-deg-x: " + rx + "deg; --rotate-deg-y:" + ry + "deg;"
+        );
         };
       }
     }
