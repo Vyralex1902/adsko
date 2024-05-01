@@ -21,6 +21,8 @@ import img_net from "../assets/net.png"
 import img_react from "../assets/react.png"
 import img_remix from "../assets/remix.png"
 import img_ts from "../assets/ts.png"
+import empirestatebuilding from "../assets/empirestatebuilding.jpg"
+import heading_img from "../assets/heading-img.jpg"
 
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3 } from "react-icons/fa";
@@ -39,6 +41,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   useEffect(() => {
+    const headingImageIndex = Math.floor(Math.random() * 2);
     if (
       localStorage.getItem('color-theme') === 'dark' ||
       (!('color-theme' in localStorage) &&
@@ -79,15 +82,35 @@ export default function Index() {
           const rect = card.getBoundingClientRect(),
             x = e.clientX - rect.left,
             y = e.clientY - rect.top;
-            // const xPerc = x / rect.width;
-            // const yPerc = y / rect.height;
-            // const rx = (xPerc - 0.5) * 20;
-            // const ry = (yPerc - 0.5) * 20;
-          card.setAttribute("style", "--mouse-x: " + x + "px; --mouse-y:" + y + "px;"  
-          // + "--rotate-deg-x: " + rx + "deg; --rotate-deg-y:" + ry + "deg;"
-        );
+          // const xPerc = x / rect.width;
+          // const yPerc = y / rect.height;
+          // const rx = (xPerc - 0.5) * 20;
+          // const ry = (yPerc - 0.5) * 20;
+          card.setAttribute("style", "--mouse-x: " + x + "px; --mouse-y:" + y + "px;"
+            // + "--rotate-deg-x: " + rx + "deg; --rotate-deg-y:" + ry + "deg;"
+          );
         };
       }
+    }
+
+    const toptextdiv = document.getElementById("top-text");
+    const headingImage = document.getElementById("headingImage");
+    if (toptextdiv && headingImage) {
+      toptextdiv.setAttribute("style", "height: " + headingImage.offsetHeight + "px;" + "margin-bottom: 20px");
+    }
+
+    console.log("Randomly chose image index of " + headingImageIndex);
+    switch (headingImageIndex) {
+      case 0:
+        if (headingImage) {
+          headingImage.setAttribute("src", empirestatebuilding);
+        }
+        break;
+      case 1:
+        if (headingImage) {
+          headingImage.setAttribute("src", heading_img);
+        }
+        break;
     }
 
     // const observer = new IntersectionObserver((entries) => {
@@ -118,19 +141,19 @@ export default function Index() {
   return (
     // <main style={{ width: "100%", height: "100%" }}>
     <div id="maincontainer" style={{ width: "100%", height: "100%" }} className="justify-center align-middle text-center bg-white dark:bg-[#1E1E1E]">
-      <div id="top-text" className="flex flex-col justify-center align-middle text-center mb-10">
-        <h1 id="codeluxe" className="top-0 text-darkprimary dark:text-white pt-14 -mb-6">adsko</h1>
-        <h2 id="slogan" className="text-gray-900 dark:text-gray-500 text-2xl font-sans">Small steps accumulate,&nbsp;
-          <span className="underline text-gray-900 dark:text-gray-500 text-2xl font-sans">take the first one now</span>.</h2>
-      </div>
-
-      <div className='flex justify-center'>
-        <div className='w-fit'>
-          <a href='#sect2'>
-            <div className="getStartedbtn_div">
-              <button className="getStartedbtn"><span></span><p data-text="go to docs" data-title="Get Started"></p></button>
-            </div>
-          </a>
+      <div id="top-text" className="flex flex-col justify-center text-center align-top">
+        <img id="headingImage" style={{ width: "100%", height: "100vh" }} className="absolute z-0 w-max h-auto"></img>
+        <h1 id="codeluxe" className="text-white top-0 z-10 -mb-6">adsko</h1>
+        <h2 id="slogan" className="z-10 text-2xl font-sans">Small steps accumulate,&nbsp;
+          <span className="underline text-2xl font-sans">take the first one now</span>.</h2>
+        <div className='flex justify-center mt-7'>
+          <div className='w-fit'>
+            <a href='#sect2'>
+              <div className="getStartedbtn_div">
+                <button className="getStartedbtn"><span></span><p data-text="go to docs" data-title="Get Started"></p></button>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -142,7 +165,7 @@ export default function Index() {
         <div className="-mt-12"><h5 className="text-gray-800 dark:text-gray-400 dark:text-opacity-50 font-bold text-[14px]">Move your pointer over the cards</h5></div>
         <div id="anim-in-left" className="mt-10 mb-2"><h1 className="text-[#ff20b8] font-bold text-lg">We primarily code using:</h1></div>
         <CodingLangsDisplay img_csharp={img_csharp} img_css={img_css} img_html={img_html} img_net={img_net} img_react={img_react} img_remix={img_remix} img_ts={img_ts} />
-        
+
         <div id='card2-body' className="bg-[#1E1E1E] dark:bg-white/[.025]">
           <div id="cards2">
             <div className="card2">
