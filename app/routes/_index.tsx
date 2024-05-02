@@ -3,6 +3,8 @@ import Swal from 'sweetalert2';
 import { Reveal } from '../styles/reveal';
 import { Link } from "@remix-run/react";
 import inpageFooter from '../inpageFooter';
+import {motion} from "framer-motion";
+import modal from "../components/Modal/index";
 import {
   SignOutButton,
   SignedIn,
@@ -30,7 +32,7 @@ import { IoLogoJavascript } from "react-icons/io";
 import { FaReact } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -138,6 +140,11 @@ export default function Index() {
     }
   }, []);
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const close = () =>setModalOpen(false);
+  const open = () =>setModalOpen(true);
+
+
   return (
     // <main style={{ width: "100%", height: "100%" }}>
     <div id="maincontainer" style={{ width: "100%", height: "100%" }} className="justify-center align-middle text-center bg-white dark:bg-[#1E1E1E]">
@@ -148,9 +155,11 @@ export default function Index() {
           <span className="underline text-2xl font-sans">take the first one now</span>.</h2>
         <div className='flex justify-center mt-7'>
           <div className='w-fit'>
-            <a href='#sect2'>
+            <a href='/'>
               <div className="getStartedbtn_div">
-                <button className="getStartedbtn"><span></span><p data-text="go to docs" data-title="Get Started"></p></button>
+                <motion.button className="getStartedbtn" whileHover={{scale:1.05}} whileTap={{scale:0.8}}
+                //onClick={() => (modalOpen ? close() : open())}
+                ><span></span><p data-text="go to docs" data-title="Get Started"></p></motion.button>
               </div>
             </a>
           </div>
@@ -223,6 +232,8 @@ export default function Index() {
           <h1 id="codeluxe-max" className="text-darkprimary dark:text-white -my-20">adsko</h1>
         </div>
       </footer>
+
+      {/* {modalOpen && <modal modalOpen={modalOpen} handleClose={close}></modal>} */}
     </div>
   );
 }
