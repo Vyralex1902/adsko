@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { Reveal } from '../styles/reveal';
 import { Link } from "@remix-run/react";
 import inpageFooter from '../inpageFooter';
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import modal from "../components/Modal/index";
 import {
   SignOutButton,
@@ -33,6 +33,14 @@ import { FaReact } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 import { useEffect, useState } from "react";
+
+import { Button } from "@/components/ui/button"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export const meta: MetaFunction = () => {
   return [
@@ -141,8 +149,8 @@ export default function Index() {
   }, []);
 
   const [modalOpen, setModalOpen] = useState(false);
-  const close = () =>setModalOpen(false);
-  const open = () =>setModalOpen(true);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
 
 
   return (
@@ -157,7 +165,7 @@ export default function Index() {
           <div className='w-fit'>
             <a href='/'>
               <div className="getStartedbtn_div">
-                <motion.button className="getStartedbtn" whileHover={{scale:1.05}} whileTap={{scale:0.8}}
+                <motion.button className="getStartedbtn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.8 }}
                 //onClick={() => (modalOpen ? close() : open())}
                 ><span></span><p data-text="go to docs" data-title="Get Started"></p></motion.button>
               </div>
@@ -165,6 +173,36 @@ export default function Index() {
           </div>
         </div>
       </div>
+
+      {/* <div className="bg-gray-500">
+        <Button className="bg-blue-200 w-16 h-16"></Button>
+      </div> */}
+
+      <div className="w-full flex justify-center items-center align-middle">
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionContent>
+              Yes. It adheres to the WAI-ARIA design pattern.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Is it styled?</AccordionTrigger>
+            <AccordionContent>
+              Yes. It comes with default styles that matches the other
+              components&apos; aesthetic.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>Is it animated?</AccordionTrigger>
+            <AccordionContent>
+              Yes. It&apos;s animated by default, but you can disable it if you
+              prefer.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
+
 
       <div className="flex flex-col h-auto align-middle text-center justify-center">
         {/* <video autoPlay muted loop><source src="https://youtu.be/Jox6R5-rIH0?list=PLdGJJ6BBahVodCt3Cet2bDmDSiRVJoE5G" type="video/mp4"></source></video> */}
