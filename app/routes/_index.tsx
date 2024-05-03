@@ -36,11 +36,12 @@ import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button"
 import {
-  Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import * as Accordion from '@radix-ui/react-accordion';
+import * as Form from '@radix-ui/react-form';
 
 export const meta: MetaFunction = () => {
   return [
@@ -155,7 +156,7 @@ export default function Index() {
 
   return (
     // <main style={{ width: "100%", height: "100%" }}>
-    <div id="maincontainer" style={{ width: "100%", height: "100%" }} className="justify-center align-middle text-center bg-white dark:bg-[#1E1E1E]">
+    <div id="maincontainer" style={{ width: "100%", height: "100%" }} className="flex flex-col justify-center align-middle text-center bg-white dark:bg-[#1E1E1E]">
       <div id="top-text" className="flex flex-col justify-center text-center align-top">
         <img id="headingImage" style={{ width: "100%", height: "100vh" }} className="absolute z-0 w-max h-auto"></img>
         <h1 id="codeluxe" className="text-white top-0 z-10 -mb-6">adsko</h1>
@@ -178,29 +179,34 @@ export default function Index() {
         <Button className="bg-blue-200 w-16 h-16"></Button>
       </div> */}
 
-      <div className="w-full flex justify-center items-center align-middle">
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Is it styled?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It comes with default styles that matches the other
-              components&apos; aesthetic.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>Is it animated?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It&apos;s animated by default, but you can disable it if you
-              prefer.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+      <div className="w-full h-auto flex flex-col justify-center items-center align-middle text-center">
+      <Accordion.Root
+    className="bg-mauve6 w-[300px] rounded-md shadow-[0_2px_10px] shadow-black/5"
+    type="single"
+    defaultValue="item-1"
+    collapsible
+  >
+    <AccordionItem value="item-1">
+      <AccordionTrigger>Is it accessible?</AccordionTrigger>
+      <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+    </AccordionItem>
+
+    <AccordionItem value="item-2">
+      <AccordionTrigger>Is it unstyled?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It's unstyled by default, giving you freedom over the look and feel.
+      </AccordionContent>
+    </AccordionItem>
+
+    <AccordionItem value="item-3">
+      <AccordionTrigger>Can it be animated?</AccordionTrigger>
+      <AccordionContent>
+        Yes! You can animate the Accordion with CSS or JavaScript.
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion.Root>
+
+        <SubscribeForm     />
       </div>
 
 
@@ -417,4 +423,43 @@ function CodingLangsDisplay({ img_csharp, img_css, img_html, img_net, img_react,
         </li>
       </ul>
     </div>);
-}
+    }
+
+    function SubscribeForm({}) {
+      return (<Form.Root className="w-[260px] dark:text-white text-black">
+          <Form.Field className="grid mb-[10px]" name="email">
+            <div className="flex items-baseline justify-between">
+              <Form.Label className="text-[15px] font-medium leading-[35px] dark:text-white text-black">Email</Form.Label>
+              <Form.Message className="text-[13px] text-red-500 opacity-[0.8]" match="valueMissing">
+                Please enter your email
+              </Form.Message>
+              <Form.Message className="text-[13px] text-red-500 opacity-[0.8]" match="typeMismatch">
+                Please provide a valid email
+              </Form.Message>
+            </div>
+            <Form.Control asChild>
+              <input className="dark:text-black text-white box-border w-full bg-blackA2 shadow-blackA6 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA6" type="email" required />
+            </Form.Control>
+          </Form.Field>
+          <Form.Field className="grid mb-[10px]" name="question">
+            <div className="flex items-baseline justify-between">
+              <Form.Label className="text-[15px] font-medium leading-[35px] dark:text-white text-black">
+                Question
+              </Form.Label>
+              <Form.Message className="text-[13px] text-red-500 opacity-[0.8]" match="valueMissing">
+                Please enter a question
+              </Form.Message>
+            </div>
+            <Form.Control asChild>
+              <textarea className="dark:text-black text-white box-border w-full bg-blackA2 shadow-blackA6 inline-flex appearance-none items-center justify-center rounded-[4px] p-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA6 resize-none" required />
+            </Form.Control>
+          </Form.Field>
+          <Form.Submit asChild>
+            <button className="text-purple-700 box-border w-full text-violet11 shadow-blackA4 hover:bg-mauve3 inline-flex h-[35px] items-center justify-center rounded-[4px] dark:bg-white bg-gray-500 px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px] ">
+              Post question
+            </button>
+          </Form.Submit>
+        </Form.Root>);
+  }
+
+  

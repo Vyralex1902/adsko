@@ -74,3 +74,72 @@
       @apply bg-background text-foreground;
     }
   }
+
+  
+  html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  #codeluxe{
+    text-transform: uppercase;
+    font-family: "singolarebold";
+    font-size: 100px;
+    font-weight: 400;
+  }
+  
+  #codeluxe-heading{
+    text-transform: uppercase;
+    font-family: "singolarebold";
+    font-size: 30px;
+    font-weight: 400;
+  }
+  
+  @keyframes slideFromLeft{
+    0%{
+      transform: translateX(-100%);
+      opacity: 0;
+      filter: blur(5px);
+    }
+    100%{
+      transform: translateX(0px);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+  
+  @font-face {
+    font-family: 'singolare';
+    src: local('singolare'), url(../fonts/singolare.otf) format('woff');
+  }
+  @font-face {
+    font-family: 'singolarebold';
+    src: local('singolarebold'), url(../fonts/singolare-bold.otf) format('woff');
+  }
+  
+  #anim-in-left{
+    animation: slideFromLeft ease-in;
+    animation-timeline: view();
+    animation-range-end: 35%;
+  }
+  
+  /* #hidden{
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateX(-100%);
+      transition: all 1s;
+  }
+  #show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  @media(prefers-reduced-motion){
+    #hidden{
+      transition: none;
+    }
+  } */

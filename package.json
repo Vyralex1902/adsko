@@ -15,6 +15,7 @@
     "@clerk/remix": "^4.0.2",
     "@flaticon/flaticon-uicons": "^3.2.1",
     "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-form": "^0.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@remix-run/node": "^2.9.1",
     "@remix-run/react": "^2.9.1",
