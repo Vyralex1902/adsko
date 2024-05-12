@@ -7,6 +7,13 @@
   animation-timeline: textMovingTimeline;
 }
 
+#slogan, #slogan span{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
 @keyframes moveToHeading{
   from{
     transform: translateY(0);

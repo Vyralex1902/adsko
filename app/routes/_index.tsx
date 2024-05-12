@@ -107,10 +107,12 @@ export default function Index() {
     }
 
     const toptextdiv = document.getElementById("top-text");
+    const secondImageSectionDiv = document.getElementById("secondImageSection");
     const headingImage = document.getElementById("headingImage");
     const secondImage = document.getElementById("secondImage");
-    if (toptextdiv && headingImage) {
+    if (toptextdiv && headingImage && secondImage && secondImageSectionDiv) {
       toptextdiv.setAttribute("style", "height: " + headingImage.offsetHeight + "px;");
+      secondImageSectionDiv.setAttribute("style", "height: " + secondImage.offsetHeight + "px;");
     }
 
     console.log("Randomly chose image index of " + headingImageIndex);
@@ -119,7 +121,7 @@ export default function Index() {
         if (headingImage) {
           headingImage.setAttribute("src", empirestatebuilding);
         }
-        if (mirrored_empirestatebuilding) {
+        if (mirrored_empirestatebuilding && secondImage) {
           secondImage.setAttribute("src", mirrored_empirestatebuilding);
         }
         break;
@@ -167,12 +169,12 @@ export default function Index() {
 
   return (
     // <main style={{ width: "100%", height: "100%" }}>
-    <div id="maincontainer" style={{ width: "100%", height: "100%" }} className="flex flex-col justify-center align-middle text-center bg-white dark:bg-[#1E1E1E]">
-      <div id="top-text" className="flex flex-col justify-center text-center align-top">
+    <div id="maincontainer" style={{ width: "100%", height: "100%" }} className="flex flex-col justify-center items-center align-middle text-center bg-white dark:bg-[#1E1E1E]">
+      <div id="top-text" className="flex flex-col items-center justify-center text-center align-top">
         <img id="headingImage" style={{ width: "100%", height: "100vh" }} className="absolute z-0 w-max h-auto"></img>
         <h1 id="codeluxe" className="text-white top-0 z-10 -mb-6">adsko</h1>
-        <h2 id="slogan" className="z-10 text-2xl font-sans">One small step,&nbsp;
-          <span className="underline text-2xl font-sans">to even more progress</span>.</h2>
+        <h2 id="slogan" className="z-10 text-2xl">One small step,&nbsp;
+          <span className="underline text-2xl">to even more progress</span>.</h2>
         <div className='flex justify-center mt-7'>
           <div className='w-fit'>
             <a href='/'>
@@ -191,11 +193,15 @@ export default function Index() {
       </div> */}
 
       <div className="w-full h-auto ">
-        <div id="secondImageSection" className="flex flex-col justify-center text-center align-top">
-          <img id="secondImage" style={{ width: "100%", height: "40vh" }} className="static z-0 w-max h-auto opacity-45"></img>
+        <div id="secondImageSection" className="flex flex-col justify-center items-center text-center align-top static">
+          <img id="secondImage" style={{ width: "100%", height: "40vh" }} className="absolute z-0 w-max h-auto opacity-45"></img>
+          <div className="flex flex-col justify-center text-center align-middle static top-0 w-[50vh] items-center backdrop-blur-md rounded-4xl">
+          <h1 className="text-3xl z-10">Subscribe to our newsletter</h1>
+          <p>and stay updated</p>
+          <SubscribeForm />
+          </div>
         </div>
-        <h1 className="text-3xl">Subscribe to our newsletter</h1>
-        <p>and stay updated</p>
+
         {/* <Accordion.Root
     className="bg-mauve6 w-[300px] rounded-md shadow-[0_2px_10px] shadow-black/5"
     type="single"
@@ -221,9 +227,6 @@ export default function Index() {
       </AccordionContent>
     </AccordionItem>
   </Accordion.Root> */}
-
-        <SubscribeForm />
-
       </div>
 
 

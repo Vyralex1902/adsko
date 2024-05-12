@@ -120,6 +120,14 @@
     font-family: 'singolarebold';
     src: local('singolarebold'), url(../fonts/singolare-bold.otf) format('woff');
   }
+  @font-face {
+    font-family: 'reem';
+    src: local('reem'), url(../fonts/ReemKufi-Regular.ttf) format('woff');
+  }
+  @font-face {
+    font-family: 'reembold';
+    src: local('reembold'), url(../fonts/ReemKufi-Bold.ttf) format('woff');
+  }
   
   #anim-in-left{
     animation: slideFromLeft ease-in;
