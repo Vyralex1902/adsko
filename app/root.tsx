@@ -6,8 +6,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import { rootAuthLoader } from "@clerk/remix/ssr.server";
-import { ClerkApp } from "@clerk/remix";
+// import { rootAuthLoader } from "@clerk/remix/ssr.server";
+// import { ClerkApp } from "@clerk/remix";
 import type { LoaderFunction } from "@remix-run/node";
 import { Partytown } from '@builder.io/partytown/react';
 
@@ -20,7 +20,7 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-export const loader: LoaderFunction = (args) => rootAuthLoader(args);
+// export const loader: LoaderFunction = (args) => rootAuthLoader(args);
 
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -51,4 +51,4 @@ function App() {
   return <Outlet />;
 }
 
-export default ClerkApp(App);
+export default App;

@@ -5,12 +5,12 @@ import { Link } from "@remix-run/react";
 import inpageFooter from '../inpageFooter';
 import { motion } from "framer-motion";
 import modal from "../components/Modal/index";
-import {
-  SignOutButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/remix";
+// import {
+//   SignOutButton,
+//   SignedIn,
+//   SignedOut,
+//   UserButton,
+// } from "@clerk/remix";
 
 import '../styles/global.css';
 import '../styles/home.css';
@@ -24,7 +24,9 @@ import img_react from "../assets/react.png"
 import img_remix from "../assets/remix.png"
 import img_ts from "../assets/ts.png"
 import empirestatebuilding from "../assets/empirestatebuilding.jpg"
+import mirrored_empirestatebuilding from "../assets/empirestatebuilding-mirrored.jpg"
 import heading_img from "../assets/heading-img.jpg"
+import heading_img2 from "../assets/heading-img-2.jpg"
 
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3 } from "react-icons/fa";
@@ -52,7 +54,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   useEffect(() => {
-    const headingImageIndex = Math.floor(Math.random() * 2);
+    const headingImageIndex = Math.floor(Math.random() * 3);
     if (
       localStorage.getItem('color-theme') === 'dark' ||
       (!('color-theme' in localStorage) &&
@@ -106,8 +108,9 @@ export default function Index() {
 
     const toptextdiv = document.getElementById("top-text");
     const headingImage = document.getElementById("headingImage");
+    const secondImage = document.getElementById("secondImage");
     if (toptextdiv && headingImage) {
-      toptextdiv.setAttribute("style", "height: " + headingImage.offsetHeight + "px;" + "margin-bottom: 20px");
+      toptextdiv.setAttribute("style", "height: " + headingImage.offsetHeight + "px;");
     }
 
     console.log("Randomly chose image index of " + headingImageIndex);
@@ -116,10 +119,18 @@ export default function Index() {
         if (headingImage) {
           headingImage.setAttribute("src", empirestatebuilding);
         }
+        if (mirrored_empirestatebuilding) {
+          secondImage.setAttribute("src", mirrored_empirestatebuilding);
+        }
         break;
       case 1:
         if (headingImage) {
           headingImage.setAttribute("src", heading_img);
+        }
+        break;
+      case 2:
+        if (headingImage) {
+          headingImage.setAttribute("src", heading_img2);
         }
         break;
     }
@@ -160,8 +171,8 @@ export default function Index() {
       <div id="top-text" className="flex flex-col justify-center text-center align-top">
         <img id="headingImage" style={{ width: "100%", height: "100vh" }} className="absolute z-0 w-max h-auto"></img>
         <h1 id="codeluxe" className="text-white top-0 z-10 -mb-6">adsko</h1>
-        <h2 id="slogan" className="z-10 text-2xl font-sans">Small steps accumulate,&nbsp;
-          <span className="underline text-2xl font-sans">take the first one now</span>.</h2>
+        <h2 id="slogan" className="z-10 text-2xl font-sans">One small step,&nbsp;
+          <span className="underline text-2xl font-sans">to even more progress</span>.</h2>
         <div className='flex justify-center mt-7'>
           <div className='w-fit'>
             <a href='/'>
@@ -179,8 +190,13 @@ export default function Index() {
         <Button className="bg-blue-200 w-16 h-16"></Button>
       </div> */}
 
-      <div className="w-full h-auto flex flex-col justify-center items-center align-middle text-center">
-      <Accordion.Root
+      <div className="w-full h-auto ">
+        <div id="secondImageSection" className="flex flex-col justify-center text-center align-top">
+          <img id="secondImage" style={{ width: "100%", height: "40vh" }} className="static z-0 w-max h-auto opacity-45"></img>
+        </div>
+        <h1 className="text-3xl">Subscribe to our newsletter</h1>
+        <p>and stay updated</p>
+        {/* <Accordion.Root
     className="bg-mauve6 w-[300px] rounded-md shadow-[0_2px_10px] shadow-black/5"
     type="single"
     defaultValue="item-1"
@@ -204,9 +220,10 @@ export default function Index() {
         Yes! You can animate the Accordion with CSS or JavaScript.
       </AccordionContent>
     </AccordionItem>
-  </Accordion.Root>
+  </Accordion.Root> */}
 
-        <SubscribeForm     />
+        <SubscribeForm />
+
       </div>
 
 
@@ -423,43 +440,42 @@ function CodingLangsDisplay({ img_csharp, img_css, img_html, img_net, img_react,
         </li>
       </ul>
     </div>);
-    }
+}
 
-    function SubscribeForm({}) {
-      return (<Form.Root className="w-[260px] dark:text-white text-black">
-          <Form.Field className="grid mb-[10px]" name="email">
-            <div className="flex items-baseline justify-between">
-              <Form.Label className="text-[15px] font-medium leading-[35px] dark:text-white text-black">Email</Form.Label>
-              <Form.Message className="text-[13px] text-red-500 opacity-[0.8]" match="valueMissing">
-                Please enter your email
-              </Form.Message>
-              <Form.Message className="text-[13px] text-red-500 opacity-[0.8]" match="typeMismatch">
-                Please provide a valid email
-              </Form.Message>
-            </div>
-            <Form.Control asChild>
-              <input className="dark:text-black text-white box-border w-full bg-blackA2 shadow-blackA6 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA6" type="email" required />
-            </Form.Control>
-          </Form.Field>
-          <Form.Field className="grid mb-[10px]" name="question">
-            <div className="flex items-baseline justify-between">
-              <Form.Label className="text-[15px] font-medium leading-[35px] dark:text-white text-black">
-                Question
-              </Form.Label>
-              <Form.Message className="text-[13px] text-red-500 opacity-[0.8]" match="valueMissing">
-                Please enter a question
-              </Form.Message>
-            </div>
-            <Form.Control asChild>
-              <textarea className="dark:text-black text-white box-border w-full bg-blackA2 shadow-blackA6 inline-flex appearance-none items-center justify-center rounded-[4px] p-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA6 resize-none" required />
-            </Form.Control>
-          </Form.Field>
-          <Form.Submit asChild>
-            <button className="text-purple-700 box-border w-full text-violet11 shadow-blackA4 hover:bg-mauve3 inline-flex h-[35px] items-center justify-center rounded-[4px] dark:bg-white bg-gray-500 px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px] ">
-              Post question
-            </button>
-          </Form.Submit>
-        </Form.Root>);
-  }
+function SubscribeForm({ }) {
+  return (<Form.Root className="w-[260px] dark:text-white text-black">
+    <Form.Field className="grid mb-[10px]" name="email">
+      <div className="flex items-baseline justify-between">
+        <Form.Label className="text-[15px] font-medium leading-[35px] dark:text-white text-black">Email</Form.Label>
+        <Form.Message className="text-[13px] text-red-500 opacity-[0.8]" match="valueMissing">
+          Please enter your email
+        </Form.Message>
+        <Form.Message className="text-[13px] text-red-500 opacity-[0.8]" match="typeMismatch">
+          Please provide a valid email
+        </Form.Message>
+      </div>
+      <Form.Control asChild>
+        <input className="dark:text-black text-white box-border w-full bg-blackA2 shadow-blackA6 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA6" type="email" required />
+      </Form.Control>
+    </Form.Field>
+    <Form.Field className="grid mb-[10px]" name="question">
+      <div className="flex items-baseline justify-between">
+        <Form.Label className="text-[15px] font-medium leading-[35px] dark:text-white text-black">
+          Question
+        </Form.Label>
+        <Form.Message className="text-[13px] text-red-500 opacity-[0.8]" match="valueMissing">
+          Please enter a question
+        </Form.Message>
+      </div>
+      <Form.Control asChild>
+        <textarea className="dark:text-black text-white box-border w-full bg-blackA2 shadow-blackA6 inline-flex appearance-none items-center justify-center rounded-[4px] p-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA6 resize-none" required />
+      </Form.Control>
+    </Form.Field>
+    <Form.Submit asChild>
+      <button className="text-purple-700 box-border w-full text-violet11 shadow-blackA4 hover:bg-mauve3 inline-flex h-[35px] items-center justify-center rounded-[4px] dark:bg-white bg-gray-500 px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px] ">
+        Post question
+      </button>
+    </Form.Submit>
+  </Form.Root>);
+}
 
-  
