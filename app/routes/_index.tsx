@@ -108,11 +108,15 @@ export default function Index() {
 
     const toptextdiv = document.getElementById("top-text");
     const secondImageSectionDiv = document.getElementById("secondImageSection");
+    const newsletterdiv = document.getElementById("newsletterdiv");
     const headingImage = document.getElementById("headingImage");
     const secondImage = document.getElementById("secondImage");
-    if (toptextdiv && headingImage && secondImage && secondImageSectionDiv) {
+    const heroImageGradientTransition = document.getElementById("heroImageGradientTransition");
+    if (toptextdiv && headingImage && secondImage && secondImageSectionDiv && newsletterdiv && heroImageGradientTransition) {
       toptextdiv.setAttribute("style", "height: " + headingImage.offsetHeight + "px;");
       secondImageSectionDiv.setAttribute("style", "height: " + secondImage.offsetHeight + "px;");
+      newsletterdiv.setAttribute("style", "height: " + (secondImageSectionDiv.offsetHeight / 1.08 ) + "px;");
+      heroImageGradientTransition.setAttribute("style", "height: " + secondImage.offsetHeight + "px;");
     }
 
     console.log("Randomly chose image index of " + headingImageIndex);
@@ -194,39 +198,15 @@ export default function Index() {
 
       <div className="w-full h-auto ">
         <div id="secondImageSection" className="flex flex-col justify-center items-center text-center align-top static">
-          <img id="secondImage" style={{ width: "100%", height: "40vh" }} className="absolute z-0 w-max h-auto opacity-45"></img>
-          <div className="flex flex-col justify-center text-center align-middle static top-0 w-[50vh] items-center backdrop-blur-md rounded-4xl">
+        <div id="heroImageGradientTransition" className="absolute bg-gradient-to-b from-[#000]/[0.01] to-[#1E1E1E] z-20 w-full h-auto"></div>
+          <img id="secondImage" style={{ width: "100%", height: "40vh" }} className="absolute z-0 w-max h-auto"></img>
+          <motion.div id="newsletterdiv" className="z-30 flex flex-col justify-center text-center align-middle static top-0 w-[50vh] items-center backdrop-blur-md rounded-3xl bg-[#000]/[0.1]" 
+          whileHover={{ scale: 1.02 }}>
           <h1 className="text-3xl z-10">Subscribe to our newsletter</h1>
           <p>and stay updated</p>
           <SubscribeForm />
-          </div>
+          </motion.div>
         </div>
-
-        {/* <Accordion.Root
-    className="bg-mauve6 w-[300px] rounded-md shadow-[0_2px_10px] shadow-black/5"
-    type="single"
-    defaultValue="item-1"
-    collapsible
-  >
-    <AccordionItem value="item-1">
-      <AccordionTrigger>Is it accessible?</AccordionTrigger>
-      <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
-    </AccordionItem>
-
-    <AccordionItem value="item-2">
-      <AccordionTrigger>Is it unstyled?</AccordionTrigger>
-      <AccordionContent>
-        Yes. It's unstyled by default, giving you freedom over the look and feel.
-      </AccordionContent>
-    </AccordionItem>
-
-    <AccordionItem value="item-3">
-      <AccordionTrigger>Can it be animated?</AccordionTrigger>
-      <AccordionContent>
-        Yes! You can animate the Accordion with CSS or JavaScript.
-      </AccordionContent>
-    </AccordionItem>
-  </Accordion.Root> */}
       </div>
 
 
@@ -260,28 +240,6 @@ export default function Index() {
         </div>
         <div className="h-[800px]"></div>
       </div>
-
-      {/* <div>
-        <SignedIn>
-        <p>You are signed in!</p>
-        <div>
-          <p>View your profile here 👇</p>
-          <UserButton />
-        </div>
-        <div>
-          <SignOutButton />
-        </div>
-      </SignedIn>
-      <SignedOut>
-        <p>You are signed out</p>
-        <div>
-          <Link to="/sign-in">Go to Sign in</Link>
-        </div>
-        <div>
-          <Link to="/sign-up">Go to Sign up</Link>
-        </div>
-      </SignedOut>
-        </div> */}
 
       <footer>
         <div className="backdrop-blur flex bottom-0 flex-col  h-16 text-gray-600 dark:text-gray-300">
