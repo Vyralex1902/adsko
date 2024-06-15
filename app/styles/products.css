@@ -1,0 +1,87 @@
+h1{
+  font-family: "Montserrat", sans-serif;
+}
+
+h2{
+  font-size: x-large;
+  font-weight: 600;
+}
+
+/* Products Cards */
+
+#product-card {
+  width: 50vh;
+  position: relative;
+  border: 2px solid rgb(255 255 255 / 15%);
+  border-radius: 0.7rem;
+}
+
+#product-card-sect1{
+  border-radius: 8px 8px 0px 0px;
+}
+
+.product-card-content {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: top;
+  gap: 1rem;
+  background-image: radial-gradient(
+    var(--clr-for-dots) 1px, 
+    transparent 1px
+  );
+  background-position: 50% 50%;
+  background-size: 1.3rem 1.4rem;
+  padding: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-card-content > :is(h2, p) {
+  text-align: center;
+}
+
+/* DOWNLAOD BTNs */
+
+.downloadbtn_div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.downloadbtn_div button {
+  width: 110px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  border: 2px;
+  border-color: rgba(255, 255, 255, 1);
+  margin-bottom: 8px;
+}
+
+.downloadbtn_div button span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+#downloadbtncontainer{
+  border-radius: 0px 0px 8px 8px;
+}
