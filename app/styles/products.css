@@ -10,9 +10,9 @@ h2{
 /* Products Cards */
 
 #product-card {
-  width: 50vh;
+  width: 70vh;
   position: relative;
-  border: 2px solid rgb(255 255 255 / 15%);
+  border: 2px solid rgb(95,95,95);
   border-radius: 0.7rem;
 }
 
